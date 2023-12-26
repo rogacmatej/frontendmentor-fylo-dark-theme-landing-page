@@ -1,0 +1,689 @@
+:root {
+  --primary-background-color: hsl(218, 28%, 13%);
+  --secondary-background-color: hsl(217, 28%, 15%);
+  --testimonials-background-color: hsl(219, 30%, 18%);
+  --footer-background-color: hsl(216, 53%, 9%);
+
+  --primary-text-color: #fff;
+  --secondary-text-color: #07043b;
+  --accent-text-color: #62e0d9;
+  --error-text-color: #ff4242;
+  --placeholder-color: #c0c0c0;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+  height: 100%;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  min-height: 100%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2.1rem;
+  background-color: var(--primary-background-color);
+  color: var(--primary-text-color);
+}
+
+h1,
+h2 {
+  color: var(--primary-text-color);
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+
+h1,
+.section-heading {
+  font-size: 4rem;
+  line-height: 5rem;
+  margin-bottom: 1.9rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: var(--accent-text-color);
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+input,
+textarea {
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: normal;
+  color: hsla(243, 87%, 12%, 1);
+  caret-color: hsla(243, 87%, 12%, 1);
+  background-color: var(--primary-text-color);
+  outline: none;
+  border: none;
+  border-radius: 3rem;
+  padding: 1.6rem 3.8rem;
+}
+
+textarea {
+  resize: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--placeholder-color);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: normal;
+}
+
+p + p {
+  margin-top: 1.6rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 144rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--primary-text-color);
+  outline: none;
+  border: none;
+  border-radius: 3rem;
+  background: linear-gradient(hsl(176, 68%, 64%), hsl(198, 60%, 50%));
+}
+
+.btn:hover,
+.btn:focus {
+  background: hsla(186, 62%, 72%, 1);
+}
+
+.error-message {
+  color: #ff4242;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: normal;
+  text-align: left;
+}
+
+.header {
+  background-color: var(--secondary-background-color);
+}
+
+.header .container {
+  padding: 7.3rem 8rem 7.5rem 8rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo {
+  width: 17.6rem;
+  height: 5.2rem;
+}
+
+.navigation-links li a {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar .navigation-links {
+  display: flex;
+  gap: 5.7rem;
+}
+
+.navbar .navigation-links li a {
+  font-family: 'Raleway', sans-serif;
+}
+
+.navbar .navigation-links li a,
+.footer-bottom .navigation-links li a {
+  color: #fff;
+  font-size: 1.6rem;
+  font-style: normal;
+  line-height: normal;
+}
+
+.navbar li a:hover,
+.navbar li a:focus {
+  text-decoration: underline;
+}
+
+.navbar li a:hover,
+.navbar li a:focus,
+.footer-bottom .navigation-links li a:hover,
+.footer-bottom .navigation-links li a:focus {
+  font-weight: 700;
+}
+
+.navbar li a::after,
+.footer-bottom .navigation-links li a::after {
+  font-weight: 700;
+  content: attr(data-text) / '';
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  user-select: none;
+  pointer-events: none;
+}
+
+.section-hero {
+  background: url(../images/bg-curvy-desktop.svg),
+    var(--secondary-background-color);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: 100%;
+  padding-bottom: 15.8rem;
+}
+
+.section-hero .container {
+  width: min(100% - 2.8rem, 72rem);
+  text-align: center;
+}
+
+.section-hero .section-heading {
+  margin-top: 3.6rem;
+  font-size: 4rem;
+  line-height: 6rem;
+}
+
+.section-hero .description {
+  margin: 3.2rem 6.6rem;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-wrap: pretty;
+}
+
+.section-hero .cta {
+  font-size: 1.6rem;
+  max-width: 28rem;
+  height: 5.6rem;
+  width: 100%;
+}
+
+.section-features {
+  padding-bottom: 13.7rem;
+}
+
+.section-features .container {
+  width: min(100% - 2.8rem, 88rem);
+  text-align: center;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  column-gap: 14.7rem;
+  row-gap: 8rem;
+}
+
+.feature .feature-image {
+  width: 10.4rem;
+  height: 10.4rem;
+  object-fit: none;
+}
+
+.feature .feature-heading {
+  margin-top: 1.6rem;
+  margin-bottom: 0.8rem;
+  font-size: 2rem;
+  line-height: normal;
+}
+
+.section-how {
+  padding-bottom: 17.9rem;
+}
+
+.section-how .container {
+  display: flex;
+  align-items: center;
+  gap: 5.72rem;
+  padding-left: 10.1rem;
+  padding-right: 10.5rem;
+}
+
+.section-how .how-it-works p {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+
+.section-how .how-it-works a {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 2.4rem;
+  line-height: 2.179rem;
+  gap: 0.8rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--accent-text-color);
+}
+
+.section-how .how-it-works a:hover,
+.section-how .how-it-works a:focus {
+  color: var(--primary-text-color);
+  border-bottom: 1px solid var(--primary-text-color);
+}
+
+.section-how .how-it-works a svg,
+.section-how .how-it-works a svg {
+  fill: var(--primary-text-color);
+}
+
+.section-how .how-it-works a:hover svg,
+.section-how .how-it-works a:focus svg {
+  fill: var(--accent-text-color);
+}
+
+.section-how .how-it-works a span {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.section-testimonials {
+  padding-bottom: 36rem;
+}
+
+.section-testimonials .container {
+  padding-left: 14rem;
+  padding-right: 14rem;
+}
+
+.testimonials {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 4rem;
+  row-gap: 2.4rem;
+}
+
+.testimonial:first-child::before {
+  position: absolute;
+  content: url(../images/bg-quotes.png);
+  z-index: -1;
+  top: -3.3rem;
+  left: -1rem;
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4rem 2.6rem 2.6rem 2.47rem;
+  border-radius: 0.3933rem;
+  background: #202a3c;
+  box-shadow: 5px 5px 8px 4px rgba(56, 56, 56, 0.1);
+}
+
+.testimonial .testimonial-quote {
+  font-size: 1.4rem;
+  letter-spacing: 0.05rem;
+}
+
+.testimonial .testimonial-author {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 2.4rem;
+}
+
+.testimonial .testimonial-author img {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  margin-right: 0.8rem;
+}
+
+.testimonial .testimonial-author .testimonial-author-name {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2rem;
+  letter-spacing: 0.05rem;
+}
+
+.testimonial .testimonial-author .testimonial-author-role {
+  margin-top: 0.4rem;
+  font-size: 0.7rem;
+  font-weight: 400;
+  line-height: 1rem;
+  letter-spacing: 0.05rem;
+}
+
+.footer {
+  position: relative;
+  padding: 16.9rem 12rem 5.3rem 8.23rem;
+  background-color: var(--footer-background-color);
+}
+
+.footer .signup {
+  position: absolute;
+  width: min(100% - 2rem, 86.3rem);
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 4rem 7.7rem 4rem 7.7rem;
+  border-radius: 0.9rem;
+  background: var(--secondary-background-color);
+  box-shadow: 5px 5px 8px 0px rgba(0, 0, 0, 0.25);
+}
+
+.footer .signup h2 {
+  text-align: center;
+  margin-bottom: 1.6rem;
+  line-height: 4.8rem;
+}
+
+.footer .signup p {
+  text-align: center;
+  margin-top: 1.6rem;
+}
+
+.footer .signup-form {
+  display: flex;
+  margin-top: 3.8rem;
+  gap: 2.9rem;
+}
+
+.footer .signup-form .form-element-container {
+  flex-grow: 1;
+}
+
+.footer .signup-form .error-message {
+  padding-left: 3.6rem;
+}
+
+.footer .signup-form .btn {
+  flex-shrink: 0;
+  width: 20rem;
+  height: 4.8rem;
+}
+
+.footer-top .logo {
+  width: 10.8rem;
+  height: 3.1rem;
+}
+
+.footer-bottom {
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
+  justify-content: space-between;
+  row-gap: 5rem;
+  margin-top: 5.2rem;
+}
+
+.footer-bottom .contact {
+  display: flex;
+  gap: 5rem;
+}
+
+.footer-bottom .location {
+  font-style: normal;
+  display: flex;
+  flex-direction: row;
+  gap: 1.6rem;
+  max-width: 37.9rem;
+}
+
+.footer-bottom .location img {
+  align-self: flex-start;
+}
+
+.footer-bottom .contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.footer-bottom .contact-links li {
+  display: flex;
+  gap: 2.2rem;
+}
+
+.footer-bottom .navigation-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.footer-bottom .social-links {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.footer-bottom .social-links li a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.1rem;
+  height: 3.1rem;
+  color: var(--primary-text-color);
+  border: 1px solid var(--primary-text-color);
+  border-radius: 50%;
+}
+
+.footer-bottom .social-links li a:hover {
+  color: var(--accent-text-color);
+  border: 1px solid var(--accent-text-color);
+}
+
+@media (max-width: 1200px) {
+  .section-features {
+    padding-bottom: 16rem;
+  }
+
+  .section-how {
+    padding-bottom: 16.97rem;
+  }
+
+  .section-how .container {
+    flex-direction: column;
+  }
+
+  .section-testimonials {
+    padding-bottom: 33.7rem;
+  }
+
+  .testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    padding: 25.9rem 8rem 5.2rem 8rem;
+  }
+
+  .footer-bottom {
+    grid-template-columns: 1fr;
+    margin-top: 3.6rem;
+  }
+
+  .footer-bottom .contact {
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+
+  .footer-bottom .social-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  h1,
+  .section-heading {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+  }
+
+  .header .container {
+    padding: 2.4rem 2rem 4.8rem 2.4rem;
+  }
+
+  .navbar .logo {
+    width: 8rem;
+    height: 2.4rem;
+  }
+
+  .navbar .navigation-links {
+    gap: 2.4rem;
+  }
+
+  .navbar .navigation-links li a {
+    font-size: 1.2rem;
+  }
+
+  .section-hero {
+    background: url(../images/bg-curvy-mobile.svg),
+      var(--secondary-background-color) no-repeat;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: 100%;
+    padding-bottom: 12rem;
+  }
+
+  .section-hero .heading {
+    margin-top: 3.3rem;
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+  }
+
+  .section-hero .description {
+    margin: 1.5rem 1.2rem 3.2rem 1.2rem;
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+  }
+
+  .feature .feature-image {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .section-how .container {
+    padding-left: 2.8rem;
+    padding-right: 2.8rem;
+  }
+
+  .section-how .how-it-works h2 {
+    margin-bottom: 1.6rem;
+  }
+
+  .section-how .how-it-works p {
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+  }
+
+  .section-how .how-it-works a {
+    margin-top: 1.6rem;
+  }
+
+  .section-testimonials {
+    padding-bottom: 33.7rem;
+  }
+
+  .section-testimonials .container {
+    padding-left: 4.8rem;
+    padding-right: 4.8rem;
+  }
+
+  .testimonial {
+    padding: 2.4rem 2rem 2.2rem 2rem;
+  }
+
+  .testimonial:first-child::before {
+    position: absolute;
+    content: '';
+    z-index: -1;
+    top: -2.1rem;
+    left: 1rem;
+    width: 3.2rem;
+    height: 3.2rem;
+    background-image: url(../images/bg-quotes.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .testimonial .testimonial-quote {
+    font-size: 1rem;
+    line-height: 1.8rem;
+  }
+
+  .testimonial .testimonial-author .testimonial-author-role {
+    font-size: 0.8rem;
+    line-height: 1rem;
+    letter-spacing: 0.0571rem;
+  }
+
+  .footer {
+    padding-left: 2.8rem;
+    padding-right: 2.8rem;
+  }
+
+  .footer .signup {
+    padding: 4rem 2.8rem 3.7rem 2.8rem;
+  }
+
+  .footer .signup p {
+    margin-top: 1.6rem;
+  }
+
+  .footer .signup-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3.8rem;
+    gap: 2.9rem;
+  }
+
+  .footer .signup-form .btn {
+    width: 100%;
+    height: 4.8rem;
+  }
+}
